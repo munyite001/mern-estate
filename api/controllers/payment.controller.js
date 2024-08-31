@@ -66,7 +66,7 @@ export const initiatePayment = async (req, res) => {
         PartyA: `254${phoneNumber.substring(1)}`, // Remove leading 0 and add 254
         PartyB: shortCode,
         PhoneNumber: `254${phoneNumber.substring(1)}`,
-        CallBackURL: `https://a85f-197-237-135-141.ngrok-free.app/api/payment/callback`,    
+        CallBackURL: `https://mern-estate-hufy.onrender.com/api/payment/callback`,    
         AccountReference: `Rstate Property Purchase for ${listingId}`,
         TransactionDesc: `Payment for ${listing.name}`,
       },
