@@ -6,8 +6,9 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'http://localhost:3000',
-        secure: false,
+        target: 'https://mern-estate-hufy.onrender.com',
+        changeOrigin: true, // Add this to ensure the target origin is used
+        secure: false, // Ignore SSL issues (only use in development)
       },
     },
   },

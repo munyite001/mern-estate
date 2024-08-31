@@ -78,7 +78,7 @@ export default function Listing() {
   const handlePayment = async () => {
     try {
       setPaying(true);
-      const response = await axios.post('http://localhost:3000/api/payment/pay', {
+      const response = await axios.post('/api/payment/pay', {
         userId: currentUser._id,
         listingId: listing._id,
         phoneNumber: currentUser.phone, // Assuming phoneNumber is part of the user data
@@ -93,7 +93,7 @@ export default function Listing() {
         //  Poll for payment status
         const intervalId = setInterval(async () => {
           try {
-            const statusResponse = await axios.get(`http://localhost:3000/api/payment/status/${paymentId}`);
+            const statusResponse = await axios.get(`/api/payment/status/${paymentId}`);
             const payment = statusResponse.data;
 
             if (payment.status === 'Completed') {
